@@ -242,7 +242,6 @@ class _CreditCardFormState extends State<CreditCardForm> {
     String? Function(String?)? validator,
     TextEditingController? controller,
   }) {
-    debugPrint('keyboardType = ${keyboardType}');
     CreditCardTheme theme = widget.theme ?? CreditCardLightTheme();
     return TextFormField(
       controller: controller,
