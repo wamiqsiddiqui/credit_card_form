@@ -43,6 +43,7 @@ class _CreditCardFormState extends State<CreditCardForm> {
   bool? isCardNumberValidated, isExpiryValidated;
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   CardType? cardType;
+  bool toolTipTapped = false;
 
   Map<String, TextEditingController> controllers = {
     "card": TextEditingController(),
@@ -172,10 +173,7 @@ class _CreditCardFormState extends State<CreditCardForm> {
                       FilteringTextInputFormatter.digitsOnly,
                       LengthLimitingTextInputFormatter(3)
                     ],
-                    suffixIcon: Icon(
-                      Icons.help,
-                      color: theme.borderColor,
-                    )),
+                    suffixIcon: CustomToolTip(theme: theme)),
               )
             ],
           ),
