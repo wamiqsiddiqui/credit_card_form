@@ -184,6 +184,7 @@ class _CreditCardFormState extends State<CreditCardForm> {
             child: textInput(
               label: 'Add a card nickname',
               key: 'nickname',
+              keyboardType: TextInputType.name,
               controller: controllers['nickname'],
               validator: (value) => emptyValidator(value, 'Card Nickname'),
               onChanged: (val) => emitResult(),
