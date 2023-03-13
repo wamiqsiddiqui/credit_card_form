@@ -21,7 +21,6 @@ String? emptyValidator(String? value, String? label) {
 }
 
 String? cardNumberValidator(String? value) {
-  debugPrint('value = $value');
   if (value == null || value.isEmpty || value == '') {
     return 'Card Number is Required';
   }
@@ -30,9 +29,7 @@ String? cardNumberValidator(String? value) {
     return 'Only VISA and MASTERCARD cards are allowed';
   }
   String cleanedValue = value.replaceAll(' ', '');
-  debugPrint('cleanedValue = $cleanedValue');
   if (cleanedValue.length < 16) {
-    debugPrint('value = $cleanedValue');
     return '16 Digits Card Number Required';
   }
   if (!_validateCardNumberWithLuhnAlgorithm(cleanedValue)) {
