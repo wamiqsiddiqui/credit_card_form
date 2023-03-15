@@ -1,14 +1,13 @@
 import 'package:credit_card_form/credit_card_form.dart';
 import 'package:credit_card_form/utils.dart';
-import 'package:flutter/material.dart';
 
-String? cvvValidator(String? value) {
+String? cvcValidator(String? value) {
   if (value == null || value.isEmpty) {
     return 'CVC is Required';
   }
   final regex = RegExp(r'^[0-9]{3}$');
   if (!regex.hasMatch(value)) {
-    return 'Invalid CVV';
+    return 'Invalid CVC';
   }
   return null;
 }
@@ -65,7 +64,7 @@ String? cardExpiryDateValidator(String? value) {
   final month = int.tryParse(parts[0]) ?? 0;
   final year = int.tryParse(parts[1]) ?? 0;
   if (month < 1 || month > 12) {
-    return 'Invalid month in expiry date';
+    return 'Invalid month';
   }
   final currentYear = DateTime.now().year;
   final currentMonth = DateTime.now().month;

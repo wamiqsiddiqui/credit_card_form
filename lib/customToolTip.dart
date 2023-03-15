@@ -16,7 +16,7 @@ class CustomToolTip extends StatelessWidget {
             direction: PopoverDirection.bottom,
             arrowHeight: 0,
             arrowWidth: 0,
-            onPop: () => FocusNode().unfocus(),
+            onPop: () => FocusManager.instance.primaryFocus!.unfocus(),
             bodyBuilder: (context) => Container(
                   width: 140,
                   height: 116,
